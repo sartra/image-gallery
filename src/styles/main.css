@@ -54,8 +54,7 @@ table {
     position: relative; }
     .gallery-image .selected-image img {
       width: 100%;
-      min-height: 100%;
-      border: 7px solid purple; }
+      min-height: 100%; }
 
 .img-info {
   z-index: 10;
