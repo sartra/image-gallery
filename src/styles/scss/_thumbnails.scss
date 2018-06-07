@@ -18,12 +18,6 @@
 @media screen and (min-width: 800px) {
   .image-scroller {
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    overflow: auto;
-    overflow-y: hidden;
-    min-height: 100%;
-    margin: .5em;
   }
     .image-scroller img {
       width: 200px;
