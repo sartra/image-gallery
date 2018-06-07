@@ -21,7 +21,7 @@ npm install -g npm
 ## Installing
 
 ```sh
-$ git clone https://github.com/sartra/redux-gallery.git
+$ git clone https://github.com/sartra/image-gallery
 $ cd redux-gallery
 $ npm install
 $ npm test
