@@ -1,6 +1,6 @@
 export default function images(state = { 
   images: [], 
-  titles:['image 1', 'image 2', 'image 3', 'image 4', 'image 5']
+  metadata: [{ title: 'Tall trees', description: 'Green trees in the north west' }, { title: 'Tree in Lake', description: 'experimental photography' }, { title: 'Sky', description: 'Dramatic sunset' }, { title: 'Not a Rose', description: 'This is definitely not a rose' }, { title: 'Misty Mountains', description: 'This could be in africa' }, { title: 'Sunflower', description: 'Summertime' }  ]
 }, action) {
   switch (action.type) {
     case 'IMAGES_RECEIVED':
@@ -8,21 +8,31 @@ export default function images(state = {
     case 'LOAD_IMAGES_FAILURE':
       return state;
     case 'SELECT_IMAGE':
-      console.log('action.images', JSON.stringify(action.image));
       let path = action.image.slice(-12) // unique path for routes 
-      let image = JSON.stringify(action.image); // selected image url 
+      let image = action.image; // selected image url 
       const images = {...state}.images  // array of all images 
-      console.log(images)
+      const metadata = { ...state }.metadata // array of titles 
       // get index of action.image in the state.images array and then set titles[index] as the title prop 
-      let i = idx(images, image)
-      console.log(i)
-      return {...state, selectedImage: action.image, routePath: path};
+      let title = getTitle(image, images, metadata)
+      console.log('title: ', title)
+      let description = getDescription(image, images, metadata)
+      console.log('description:', description)
+
+      return {...state, selectedImage: action.image, routePath: path, title: title, description: description};
     default:
       return state;
   }
 }
 
 
-const idx = (arr, image) => {
-  return arr.indexOf(image);
+// get title from metadata
+function getTitle (image, imagesArr, metaArr){
+  let i = imagesArr.indexOf(image); 
+  return metaArr[i].title
+}
+
+// get description from metadata
+function getDescription (image, imagesArr, metaArr) {
+  let i = imagesArr.indexOf(image);  
+  return metaArr[i].description
 }

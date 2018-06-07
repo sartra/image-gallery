@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sartra/redux-image-gallery.git"
+    "url": "git+https://github.com/sartra/image-gallery.git"
   },
   "author": "Sarah REnshaw",
   "license": "MIT",

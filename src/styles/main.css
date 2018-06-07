@@ -33,7 +33,6 @@ table {
   border-spacing: 0; }
 
 .image-gallery {
-  transition: all .6s;
   display: flex;
   flex-direction: column;
   border: 6px solid orange; }
@@ -44,8 +43,6 @@ table {
 
 .gallery-image {
   flex-basis: 80%;
-  width: 700px;
-  max-height: 700px;
   align-items: center;
   overflow: hidden;
   border: 9px solid red;
@@ -53,8 +50,7 @@ table {
   .gallery-image .selected-image {
     position: relative; }
     .gallery-image .selected-image img {
-      width: 100%;
-      min-height: 100%; }
+      width: 100%; }
 
 .img-info {
   z-index: 10;
@@ -85,8 +81,7 @@ table {
 
 .image-scroller img {
   width: 100px;
-  height: auto;
-  border: 1px solid white; }
+  height: auto; }
 
 @media screen and (min-width: 800px) {
   .image-scroller {
