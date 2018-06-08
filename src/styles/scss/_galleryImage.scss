@@ -1,21 +1,18 @@
 .gallery-image {
-    flex-basis: 80%;
-    align-items: center;
-    overflow: hidden;
-    max-width: 100%;
-
-    .selected-image {
-      position: relative;
-
-        img {
-          width: 100%;
-         // min-height: 100%;
-        }
-    }  
+  flex-basis: 80%;
+  align-items: center;
+  overflow: hidden;
+  max-width: 100%;
+  .selected-image {
+    position: relative;
+    img {
+      width: 100%;
+    }
+  }
 }
 
 .img-info {
-  z-index: 10; 
+  z-index: 10;
   position: absolute;
   bottom: 0;
   height: 20%;
@@ -40,13 +37,13 @@
 // iPhone 5/SE
 @media screen and (max-width: 321px) {
   .img-info {
-    padding: 7px; 
+    padding: 7px;
   }
 }
 
 // small screens & desktops
 @media screen and (max-width: 560px) {
   .number {
-    display: none; 
+    display: none;
   }
 }
