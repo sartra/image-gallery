@@ -72,12 +72,12 @@ table {
 .image-scroller {
   border: 3px solid pink;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   overflow: auto;
   overflow-y: hidden;
   max-width: 100%;
-  margin: .5em; }
+  margin-left: .5em; }
 
 .image-scroller img {
   width: 100px;
@@ -88,7 +88,7 @@ table {
     flex-direction: column; }
   .image-scroller img {
     width: 200px;
-    height: 100px;
+    height: 135px;
     object-fit: cover; } }
 
 body {
