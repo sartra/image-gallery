@@ -1,6 +1,6 @@
 export default function images(state = { 
   images: [], 
-  metadata: [{ title: 'Tall trees', description: 'Green trees in the north west' }, { title: 'Tree in Lake', description: 'experimental photography' }, { title: 'Not a Rose', description: 'This is definitely not a rose' }, { title: 'Misty Mountains', description: 'This could be in africa' }, { title: 'Sunflower', description: 'Summertime' }  ]
+  metadata: [{ title: 'Tall trees', description: 'Green trees in the north west' }, { title: 'Tree in Lake', description: 'experimental photography' }, { title: 'Not a Rose', description: 'This is definitely not a rose' }, { title: 'Misty Mountains', description: 'Wish I were there' }, { title: 'Sunflower', description: 'Summertime' }  ]
 }, action) {
 
   switch (action.type) {
