@@ -1,16 +1,14 @@
 .image-scroller {
-    border: 3px solid pink;
     display: flex;
     justify-content: space-between;
     align-items: center;
     overflow: auto;
     // overflow-y: hidden;
     max-width: 100%;
-    margin-left: .5em;
+    margin-top: 1em;
 
     img {
-      max-width: 20em;
-      max-height: 100px;
+      max-width: 100%;
     }
 }
 
@@ -18,11 +16,15 @@
 @media screen and (min-width: 800px) {
   .image-scroller {
     flex-direction: column;
+    margin: 0 0 0 1em;
+
+    .thumbnail {
+      height: 115px; 
+    }
 
     img {
-      width: 20em;
-      height: 135px;
-      margin-left: .15em;
+      width: 200px;
+      max-height: 100%;
       object-fit: cover;  
     }
   }
