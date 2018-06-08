@@ -1,7 +1,8 @@
 export default function images(state = { 
   images: [], 
-  metadata: [{ title: 'Tall trees', description: 'Green trees in the north west' }, { title: 'Tree in Lake', description: 'experimental photography' }, { title: 'Sky', description: 'Dramatic sunset' }, { title: 'Not a Rose', description: 'This is definitely not a rose' }, { title: 'Misty Mountains', description: 'This could be in africa' }, { title: 'Sunflower', description: 'Summertime' }  ]
+  metadata: [{ title: 'Tall trees', description: 'Green trees in the north west' }, { title: 'Tree in Lake', description: 'experimental photography' }, { title: 'Not a Rose', description: 'This is definitely not a rose' }, { title: 'Misty Mountains', description: 'This could be in africa' }, { title: 'Sunflower', description: 'Summertime' }  ]
 }, action) {
+
   switch (action.type) {
     case 'IMAGES_RECEIVED':
       return {...state, images: action.images};
@@ -13,12 +14,13 @@ export default function images(state = {
       const images = {...state}.images  // array of all images 
       const metadata = { ...state }.metadata // array of titles 
       // get index of action.image in the state.images array and then set titles[index] as the title prop 
+      let number = images.indexOf(image)+1; 
       let title = getTitle(image, images, metadata)
-      console.log('title: ', title)
+      console.log('number', number, 'title: ', title)
       let description = getDescription(image, images, metadata)
       console.log('description:', description)
-
-      return {...state, selectedImage: action.image, routePath: path, title: title, description: description};
+     
+      return {...state, selectedImage: action.image, routePath: path, number: number, title: title, description: description};
     default:
       return state;
   }
