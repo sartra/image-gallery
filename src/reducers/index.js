@@ -9,7 +9,7 @@ export default function images(state = {
     case 'LOAD_IMAGES_FAILURE':
       return state;
     case 'SELECT_IMAGE':
-      let path = action.image.slice(-12) // unique path for routes 
+      let path = action.image.slice(-12, -4) // unique path for routes 
       let image = action.image; // selected image url 
       const images = {...state}.images  // array of all images 
       const metadata = { ...state }.metadata // array of titles 
@@ -19,7 +19,7 @@ export default function images(state = {
       console.log('number', number, 'title: ', title)
       let description = getDescription(image, images, metadata)
       console.log('description:', description)
-     
+     console.log('path', path)
       return {...state, selectedImage: action.image, routePath: path, number: number, title: title, description: description};
     default:
       return state;
