@@ -12,10 +12,10 @@ export class Gallery extends Component {
     this.props.loadImages();
   }
   render() {
-    const {images, selectImage, selectedImage, title, discription} = this.props;
+    const {images, selectImage, selectedImage, number, title, description} = this.props;
     return (
       <div className="image-gallery" hidden={!selectedImage}>
-        <GalleryImage image={selectedImage} title={title}/>
+        <GalleryImage image={selectedImage} number={number} title={title} description={description} />
         <GalleryThumbs selectImage={selectImage} images={images} />
       </div>
     )
@@ -23,7 +23,7 @@ export class Gallery extends Component {
 }
 
 export default connect(
-  state => ({images: state.images, selectedImage: state.selectedImage}),
+  state => ({images: state.images, selectedImage: state.selectedImage, number: state.number, title: state.title, description: state.description}),
   dispatch => bindActionCreators(ImageGalleryActions, dispatch)
 )(Gallery)
 
