@@ -3,7 +3,7 @@
     justify-content: space-between;
     align-items: center;
     overflow: auto;
-    // overflow-y: hidden;
+    overflow-y: hidden;
     max-width: 100%;
     margin-top: 1em;
 
@@ -12,8 +12,8 @@
     }
 }
 
-
-@media screen and (min-width: 800px) {
+// desktop 
+@media screen and (min-width: 840px) {
   .image-scroller {
     flex-direction: column;
     margin: 0 0 0 1em;

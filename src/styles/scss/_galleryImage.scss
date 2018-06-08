@@ -25,13 +25,28 @@
   background: rgba(0, 0, 0, .3);
   color: #fff;
   text-shadow: 1px 1px 0 rgba(0, 0, 0, .6);
-
-
 }
 
-// tablets and desktops
-@media screen and (min-width: 800px) {
-    .img-info {
-      height: 20%;
-    }
+// Galaxy S5, Pixel 2, Pixel2 XL, iPhone 6/7/8/X/Plus 
+@media screen and (max-width: 415px) {
+  .title {
+    font-size: 1em;
+  }
+  .description {
+    font-size: .8em;
+  }
+}
+
+// iPhone 5/SE
+@media screen and (max-width: 321px) {
+  .img-info {
+    padding: 7px; 
+  }
+}
+
+// small screens & desktops
+@media screen and (max-width: 560px) {
+  .number {
+    display: none; 
+  }
 }
