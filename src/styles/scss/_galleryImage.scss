@@ -1,7 +1,5 @@
 .gallery-image {
     flex-basis: 80%;
-    // width: 700px;
-    // max-height: 700px;
     align-items: center;
     overflow: hidden;
     border: 9px solid red;
@@ -27,8 +25,9 @@
   padding: 15px;
   background: rgba(0, 0, 0, .3);
   color: #fff;
-  font-size: .8em;
   text-shadow: 1px 1px 0 rgba(0, 0, 0, .6);
+
+
 }
 
 // tablets and desktops
