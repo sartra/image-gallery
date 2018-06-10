@@ -26,5 +26,3 @@ export default connect(
   state => ({ images: state.images, selectedImage: state.selectedImage, number: state.number, title: state.title, description: state.description, routePath: state.routePath}),
   dispatch => bindActionCreators(ImageGalleryActions, dispatch)
 )(Gallery)
-
-

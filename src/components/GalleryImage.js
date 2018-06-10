@@ -1,4 +1,5 @@
 import React from 'react';
+
 export default function GalleryImage({image, number, title, description}) {
   return (
     <div className="gallery-image">
@@ -13,4 +14,3 @@ export default function GalleryImage({image, number, title, description}) {
     </div>
   )
 }
- 

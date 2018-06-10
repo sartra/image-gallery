@@ -22,7 +22,6 @@ export default function images(state = {
   }
 }
 
-
 // get title from metadata
 function getTitle (image, imagesArr, metaArr){
   let i = imagesArr.indexOf(image); 
