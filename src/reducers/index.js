@@ -1,6 +1,9 @@
 import { push } from 'connected-react-router'
 import createHistory from 'history/createBrowserHistory'
 
+const history = createHistory();
+// Get the current location.
+const location = history.location;
 
 export default function images(state = { 
   images: [], 
@@ -20,27 +23,18 @@ export default function images(state = {
       let number = images.indexOf(image)+1; 
       let title = getTitle(image, images, metadata);
       let description = getDescription(image, images, metadata);
-      let i = images.indexOf(image); // use as route
-      let path = `image${i}`
-      const history = createHistory()
-      // Get the current location.
-      const location = history.location
+      let path = `image${number}`
+
+      console.log('loco', location)
       // Listen for changes to the current location.
       const unlisten = history.listen((location, action) => {
         // location is an object like window.location
-        console.log(action, location.pathname, location.state)
+        console.log(action, 'LOC PATH', location.pathname, 'LOC STATE', location.state)
       })
-
       // Use push, replace, and go to navigate around.
-      history.push(`/${path}`, { ...state,
-        selectedImage: action.image,
-        routePath: path,
-        number: number,
-        title: title,
-        description: description
-      })
+      history.push(`/${path}`, { ...state })
+
       unlisten();
-      //history.push(`/${i}`)
       return {...state, selectedImage: action.image, routePath: path, number: number, title: title, description: description};
     default:
       return state;
