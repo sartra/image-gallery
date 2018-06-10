@@ -12,13 +12,19 @@ import reducer from './reducers/index'
 
 import { watchLoadImages } from './sagas';
 
-import { syncHistoryWithStore } from 'react-router-redux';
-import { createHistory } from 'history';
-import routing from './reducers/routing';
+import { Router, Route, browserHistory } from 'react-router'
+
+import { syncHistoryWithStore, routerReducer } from 'react-router-redux';
+// import { createHistory } from 'history';
+
+import routes from './reducers/routes';
+
+import createHistory from 'history/createBrowserHistory'
 
 const rootReducer = combineReducers({
   reducer,
-  routing,
+  routes,
+  routing: routerReducer
 });
 
 const store = createStore(
@@ -32,6 +38,9 @@ syncHistoryWithStore(
   createHistory(),
   store,
 );
+
+// Create an enhanced history that syncs navigation events with the store
+// const history = syncHistoryWithStore(browserHistory, store)
 
 ReactDOM.render(
   <Provider store={store}>

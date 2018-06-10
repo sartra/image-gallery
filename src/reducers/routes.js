@@ -8,7 +8,8 @@ const initialState = { locationBeforeTransitions: null };
 function routing(state = initialState, action) {
   // This LOCATION_CHANGE case is copied from react-router-redux's routerReducer
   if (action.type === LOCATION_CHANGE) {
-    return { ...state, locationBeforeTransitions: action.payload }
+    return { ...state, locationBeforeTransitions: action.payload 
+    }
   }
 
   // Here is our code to set the location state when the user chooses
