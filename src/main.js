@@ -36,7 +36,7 @@ const store = createStore(
   applyMiddleware(createSagaMiddleware(watchLoadImages))
 );
 
-// This is all we need to do sync browser history with the location
+// sync browser history with the location
 // state in the store.
 syncHistoryWithStore(
   createHistory(),
