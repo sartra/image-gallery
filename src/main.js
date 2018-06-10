@@ -14,12 +14,16 @@ import { watchLoadImages } from './sagas';
 
 import { Router, Route, browserHistory } from 'react-router'
 
-import { syncHistoryWithStore, routerReducer } from 'react-router-redux';
+import { syncHistoryWithStore} from 'react-router-redux';
+import { routerReducer } from 'react-router-redux';
+
 // import { createHistory } from 'history';
+import createHistory from 'history/createBrowserHistory'
+
 
 import routes from './reducers/routes';
 
-import createHistory from 'history/createBrowserHistory'
+// import createHistory from 'history/createBrowserHistory'
 
 const rootReducer = combineReducers({
   reducer,

@@ -14,7 +14,7 @@ function routing(state = initialState, action) {
 
   // Here is our code to set the location state when the user chooses
   // a different option in the menu
-  if (action.type === SELECT_IMAGE) {
+  if (action.type === 'SELECT_IMAGE') {
     const { name } = action;
     let location = state.locationBeforeTransitions;
     const pathname = `/gallery/${name}`;

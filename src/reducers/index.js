@@ -11,6 +11,7 @@ export default function images(state = {
     case 'LOAD_IMAGES_FAILURE':
       return state;
     case 'SELECT_IMAGE':
+      let i = imagesArr.indexOf(image);
       let path = action.image.slice(-12, -4) 
       let image = action.image; 
       const images = {...state}.images  
