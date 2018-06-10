@@ -1,3 +1,5 @@
+import { LOCATION_CHANGE } from 'react-router-redux';
+
 export default function images(state = { 
   images: [], 
   metadata: [{ title: 'Bamboo', description: 'Beautiful invasive species' }, { title: 'Tree in Lake', description: 'experimental photography' }, { title: 'Not a Rose', description: 'This is definitely not a rose' }, { title: 'Misty Mountains', description: 'Wish I were there' }, { title: 'Sunflower', description: 'Summertime smells like this' }  ]
@@ -17,6 +19,10 @@ export default function images(state = {
       let title = getTitle(image, images, metadata)
       let description = getDescription(image, images, metadata)
       return {...state, selectedImage: action.image, routePath: path, number: number, title: title, description: description};
+    case 'LOCATION_CHANGE':
+      const pathname = action.payload.pathname;
+      const [_, endpoint = ""] = pathname.split('/');
+      return endpoint;
     default:
       return state;
   }
