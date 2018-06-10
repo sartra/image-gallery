@@ -34,14 +34,14 @@ export default function images(state = {
       // Use push, replace, and go to navigate around.
       history.push(`/${path}`, { ...state,
         selectedImage: action.image,
-        routePath: i,
+        routePath: path,
         number: number,
         title: title,
         description: description
       })
       unlisten();
       //history.push(`/${i}`)
-      return {...state, selectedImage: action.image, routePath: i, number: number, title: title, description: description};
+      return {...state, selectedImage: action.image, routePath: path, number: number, title: title, description: description};
     default:
       return state;
   }
